@@ -1,6 +1,6 @@
 # FAQ
 
-Date: 5/4/2020 9:06pm 
+Date: 5/7/2020 am 
 
 This is a library of finance related web scraping and data mining scripts. 
 
@@ -9,4 +9,6 @@ This is a library of finance related web scraping and data mining scripts.
 	* Note: some of the class items may change from when this was last editted. The updated class name may need to be identified and replaced within the code. 
 	* Source: https://www.nerdwallet.com/best/banking/cd-rates
 2. High-Yield Savings account rates from  Money Rates 
-	* Source: 'https://accounts.money-rates.com/savings-and-money-markets'
+	* Source: https://accounts.money-rates.com/savings-and-money-markets
+3. Well's Fargo CD Rates 
+	* Source: https://www.wellsfargo.com/savings-cds/rates/
