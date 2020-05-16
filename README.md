@@ -1,7 +1,5 @@
 # FAQ
 
-Date: 5/7/2020 am 
-
 This is a library of finance related web scraping and data mining scripts. 
 
 ## Current Scripts: 
