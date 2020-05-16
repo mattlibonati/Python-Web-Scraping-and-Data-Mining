@@ -4,13 +4,6 @@
 
 One type of investment is a certificate of deposit (CD). Due to the volatilty of interest rates, banks are constantly adjusting their CD yields in-line with the federal funds rate to maintain a competative advantage. Nerd Wallet is one of many great resources for this type of information. The following code obtains data from Nerd Wallet for a few top competitors's 1, 3, and 5 year CD yields.
 
-#### Libraries used within script:
-Requests           - obtain html
-<br>Beautiful Soup - parsing html
-<br>Numpy          - reshape data
-<br>Itertools      - convert array to matrix by slicing rows 
-<br>Pandas         - export to CSV 
-
 ### Import Modules
 
 
@@ -35,7 +28,7 @@ soup = bs.BeautifulSoup(resp.text, "lxml")
 
 ### Obtain bank CD list
 
-We must start by extracting the list of banks included within Nerd Wallet's analysis. Beautiful Soup is used to loop through each paragraph of the html (indicated by the 'p') for the peer name class.
+Start by extracting the list of banks included within Nerd Wallet's analysis. Beautiful Soup is used to loop through each paragraph of the html (indicated by the 'p') for the peer name class.
 
 
 ```python
@@ -97,7 +90,7 @@ cd_ls_cols
 
 ### Data on rates and minimum deposits 
 
-Rates are obtained in a similar fashion as the prior. Once processed through the for loop.cd_data is processed from the for loop, is it in the form of a list. Itertools iter(fn) and islice(fn) are used transform the cd_data list into an array with rows of four(determined from the prior step).
+Rates are obtained in a similar fashion as the prior. A list of cd rate data is created from the loop. Itertools iter(fn) and islice(fn) are used transform the list into an array with rows of four(determined from the prior step).
 
 
 ```python
@@ -152,19 +145,6 @@ nerdWallet
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">

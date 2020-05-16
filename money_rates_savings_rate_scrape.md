@@ -2,7 +2,7 @@
 
 ### Overview
 
-The following program collects high-yielding saving accounts from Money Rates within the 50-100K range. It should be noted Money Rates changes the accounts included within the list regularly.
+The following script collects high-yielding saving accounts from Money Rates within the 50-100K range. It should be noted Money Rates changes the accounts included within the list regularly, so the sample will vary.
 
 ### Import Modules
 
@@ -13,7 +13,6 @@ from bs4 import BeautifulSoup
 import bs4 as bs
 import requests 
 import numpy as np
-from itertools import islice
 ```
 
 ### Extract HTML from website
@@ -33,15 +32,13 @@ for row in soup.findAll('p', {'class': 'company_name'}):
     row2 = row.text.strip() # string removes blanks
     cd_rows.append(row2)
     
-cd_rows = [e for e in cd_rows if e not in ('American Express National Bank')]
-
 cd_rows
 ```
 
 
 
 
-    ['HSBC Bank', 'Marcus by Goldman Sachs', 'The\xa0Provident\xa0Bank']
+    ['Simple Bank', 'American Express National Bank', 'Marcus by Goldman Sachs']
 
 
 
@@ -59,7 +56,7 @@ cd_rates_ls
 
 
 
-    ['1.60', '1.55', '0.75']
+    ['1.40', '1.30', '1.30']
 
 
 
@@ -79,7 +76,7 @@ rate_type_ls
 
 
 
-    ['Savings', 'Savings', 'Savings']
+    ['Checking', 'Savings', 'Savings']
 
 
 
@@ -115,7 +112,7 @@ min_dep_ls
 
 
 
-    ['$1', '$0', '$50,000']
+    ['$0', '$1', '$0']
 
 
 
@@ -133,7 +130,7 @@ rate_date
 
 
 
-    ['5/4/2020', '5/4/2020', '5/4/2020']
+    ['5/16/2020', '5/16/2020', '5/16/2020']
 
 
 
@@ -148,11 +145,11 @@ fullList
 
 
 
-    [['1.60', '1.55', '0.75'],
-     ['Savings', 'Savings', 'Savings'],
+    [['1.40', '1.30', '1.30'],
+     ['Checking', 'Savings', 'Savings'],
      ['$0.00', '$0.00', '$0.00'],
-     ['$1', '$0', '$50,000'],
-     ['5/4/2020', '5/4/2020', '5/4/2020']]
+     ['$0', '$1', '$0'],
+     ['5/16/2020', '5/16/2020', '5/16/2020']]
 
 
 
@@ -174,19 +171,6 @@ money_rates
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -200,28 +184,28 @@ money_rates
   </thead>
   <tbody>
     <tr>
-      <td>HSBC Bank</td>
-      <td>1.60</td>
+      <td>Simple Bank</td>
+      <td>1.40</td>
+      <td>Checking</td>
+      <td>$0.00</td>
+      <td>$0</td>
+      <td>5/16/2020</td>
+    </tr>
+    <tr>
+      <td>American Express National Bank</td>
+      <td>1.30</td>
       <td>Savings</td>
       <td>$0.00</td>
       <td>$1</td>
-      <td>5/4/2020</td>
+      <td>5/16/2020</td>
     </tr>
     <tr>
       <td>Marcus by Goldman Sachs</td>
-      <td>1.55</td>
+      <td>1.30</td>
       <td>Savings</td>
       <td>$0.00</td>
       <td>$0</td>
-      <td>5/4/2020</td>
-    </tr>
-    <tr>
-      <td>The Provident Bank</td>
-      <td>0.75</td>
-      <td>Savings</td>
-      <td>$0.00</td>
-      <td>$50,000</td>
-      <td>5/4/2020</td>
+      <td>5/16/2020</td>
     </tr>
   </tbody>
 </table>
