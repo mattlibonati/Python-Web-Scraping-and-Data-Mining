@@ -49,8 +49,6 @@ body = iter(body)
 body = [list(islice(body, elem))                    # Itertools islice Fn used to create an array for the body
         for elem in (split_len*num_rows)]
 ```
-
-    2549
     
 
 
