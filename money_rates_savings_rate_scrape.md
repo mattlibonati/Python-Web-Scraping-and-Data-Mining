@@ -9,7 +9,6 @@ The following script collects high-yielding saving accounts from Money Rates wit
 
 ```python
 import pandas as pd
-from bs4 import BeautifulSoup
 import bs4 as bs
 import requests 
 import numpy as np

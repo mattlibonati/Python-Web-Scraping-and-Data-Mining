@@ -7,7 +7,6 @@ A typical barrier data miners face is limited request to servers. Many servers u
 
 ```python
 import requests
-from bs4 import BeautifulSoup
 import bs4 as bs
 import pandas as pd
 import numpy as np

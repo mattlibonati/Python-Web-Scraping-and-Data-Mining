@@ -9,7 +9,6 @@ One type of investment is a certificate of deposit (CD). Due to the volatilty of
 
 ```python
 import pandas as pd
-from bs4 import BeautifulSoup
 import bs4 as bs
 import requests 
 import numpy as np
